@@ -1,86 +1,54 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <title>Leaflet sample</title>
-      <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-      <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-   </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Home to office</title>
+      
+    <!-- <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> -->
+      
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+         crossorigin=""/>
+      
+    <!-- <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+      
+      <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+         crossorigin=""></script>
+    
+</head>
+<body>
 
-   <body>
+    <center> <div id = "map" style = "width: 900px; height: 580px"> </div> </center>
+   <script src="js/h2o.js"></script>
+   <style>
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .button:hover {
+        background-color: green;
+      }
+      </style>
+      </head>
+      <body>
+      
+      
+      <br><br><br>
+<input type="radio">
 
-    <h1>Home To It park</h1>
-      <center><div id = "map" style = "width: 900px; height: 580px"></div></center>
-      <script>
-         // Creating map options
-         var mapOptions = {
-            center: [22.7268, 75.8720],
-            zoom: 12
-         }
-         
-         // Creating a map object
-         var map = new L.map('map', mapOptions);
-         
-         // Creating a Layer object
-         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-         
-
-        // Icon options
-         var iconOptions = {
-            iconUrl: 'eplogo.png',
-            iconSize: [40, 40]
-         }
-            // Icon options
-         var iconOptions2 = {
-            iconUrl: 'mpicon.png',
-            iconSize: [40, 40]
-         }
-         // Creating a custom icon
-         var customIcon = L.icon(iconOptions); 
-         var customIcon2 = L.icon(iconOptions2)
+      <center><button class="button" onclick="removeCircle()">Remove Circle</button>   <button class="button" onclick="addCircle()">Add Circle</button></center>
+      
 
 
-         // Options for the marker
-         var markerOptions = {
-            clickable: true,
-            draggable: true,
-           icon: customIcon,            
-            }
-         
-            // Options for the marker
-         var markerOptions1 = {
-            clickable: true,
-            draggable: true,            
-            }
-            // Options for the marker
-                var markerOptions2 = {
-                clickable: true,
-                draggable: true,
-                icon: customIcon2,            
-                }
-         // Adding layer to the map
-         map.addLayer(layer);
-          // Creating a marker
-          var marker = L.marker([22.6868, 75.8715], markerOptions);
-          var marker1 = L.marker([22.756209, 75.872426], markerOptions1)
-          var marker2 = L.marker([22.7590242,75.8686152],markerOptions2)
 
-         
-
-         
-         // Adding marker to the map
-         marker.addTo(map);
-         marker1.addTo(map);
-         marker2.addTo(map);
-         
-
-         // Adding popup to the marker
-         marker.bindPopup('Engineer Philosophy').openPopup();
-         marker.addTo(map); // Adding marker to the map
-         marker1.bindPopup('Home').openPopup();
-         marker1.addTo(map); // Adding marker to the map
-         marker2.bindPopup('Micro Parcel').openPopup();
-         marker2.addTo(map);
-      </script>
-   </body>
-   
+</body>
 </html>
